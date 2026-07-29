@@ -1,3 +1,20 @@
+// --- Lógica del Menú Hamburguesa en Celular ---
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-item');
+
+mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Cerrar el menú automáticamente cuando se hace click en una opción
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
+
+// --- Animación de los Contadores de Estadísticas ---
 const counters = document.querySelectorAll('.counter');
 const speed = 200;
 
