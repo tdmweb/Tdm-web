@@ -21,7 +21,7 @@ body {
     line-height: 1.6;
 }
 
-/* Header & Nav con fondo azul oscuro y logo más grande */
+/* Header & Nav */
 header {
     position: fixed;
     top: 0;
@@ -48,7 +48,7 @@ nav {
 }
 
 .logo img {
-    height: 65px;
+    height: 80px; /* Logo más grande como pediste */
     width: auto;
     display: block;
 }
@@ -68,6 +68,23 @@ nav {
 
 .nav-links a:hover {
     color: var(--accent);
+}
+
+/* Botón Hamburguesa (Oculto en PC) */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: 0.3s;
 }
 
 /* Hero Section */
@@ -327,9 +344,35 @@ footer {
 footer h2 { margin-bottom: 1rem; }
 footer p { margin-bottom: 2rem; color: #cbd5e1; }
 
+/* Responsive para Celulares y Menú Hamburguesa */
 @media (max-width: 768px) {
-    .nav-links { display: none; }
+    .menu-toggle {
+        display: flex; /* Muestra el botón hamburguesa en móviles */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #09101d;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+    }
+
+    .nav-links.active {
+        max-height: 350px; /* Se despliega al hacer click */
+    }
+
     .hero-content h1 { font-size: 2.5rem; }
+
+    /* Adaptación de tablas para celulares */
     table, thead, tbody, th, td, tr { display: block; }
     th { text-align: center; }
     td { text-align: right; padding-left: 50%; position: relative; }
