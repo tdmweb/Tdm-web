@@ -33,16 +33,20 @@
         }
 
         /* Header & Nav */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 23, 42, 0.95); /* Ajustado a tono oscuro para que contraste con tu logo blanco */
-            backdrop-filter: blur(5px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-
+       <header>
+        <nav>
+            <a href="#inicio" class="logo">
+                <img src="assets/logo.blanco.png" alt="TDM Web" style="height: 40px; width: auto; display: block;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#plataformas">Plataformas</a></li>
+                <li><a href="#planes">Planes</a></li>
+            </ul>
+        </nav>
+    </header> 
         nav {
             max-width: 1200px;
             margin: 0 auto;
