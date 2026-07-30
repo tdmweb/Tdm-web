@@ -273,7 +273,6 @@ h2.section-title::after {
 }
 
 .plataformas-container {
-    background: white;
     padding: 3rem;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
