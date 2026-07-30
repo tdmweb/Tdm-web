@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- 2. Animación de los Contadores de Estadísticas ---
 // --- 2. Animación de los Contadores de Estadísticas ---
 const counters = document.querySelectorAll('.counter');
-const speed = 300;
+const speed = 350;
 
 const animateCounters = () => {
     counters.forEach(counter => {
