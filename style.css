@@ -861,3 +861,64 @@ footer p {
     border-color: var(--primary);
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
 }
+
+/* =========================================
+   MODO OSCURO TDM WEB (Copiar al final)
+   ========================================= */
+
+/* 1. Fondo de toda la página y color de texto general */
+body, html {
+    background-color: #09101d !important; /* El azul oscuro de tu header */
+    color: #e2e8f0 !important; /* Texto gris claro para buena lectura */
+}
+
+/* 2. Quitar fondos blancos/grises de las secciones */
+section, 
+.planes-section, 
+.beneficios-section, 
+.proyectos-section, 
+.stats-section {
+    background-color: transparent !important; 
+}
+
+/* 3. Títulos generales más limpios */
+h1, h2, h3, h4, h5, h6, 
+.section-title {
+    color: #ffffff !important;
+}
+
+/* 4. Estilo unificado para TODAS las tarjetas (Planes, Tiendas, etc.) */
+/* Si tus otras tarjetas tienen nombres distintos, agregá la clase separada por coma */
+.plan-card, 
+.card, 
+.proyecto-card {
+    background-color: #111a28 !important; /* Un azul un tono más claro que el fondo */
+    border: 1px solid rgba(255, 255, 255, 0.05) !important; /* Borde súper sutil por defecto */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important; /* Sombra oscura para separar del fondo */
+    color: #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+/* 5. Efecto Hover y Tarjetas Destacadas (El brillo celeste) */
+.plan-card:hover, 
+.card:hover,
+.proyecto-card:hover,
+.destacado /* Clase para el plan "Más Elegido" si la tenés */ {
+    border-color: #00a4ff !important; /* Borde celeste */
+    box-shadow: 0 0 20px rgba(0, 164, 255, 0.15), inset 0 0 10px rgba(0, 164, 255, 0.05) !important;
+    transform: translateY(-5px);
+}
+
+/* 6. Textos secundarios dentro de las tarjetas (ej: "30 productos cargados") */
+.plan-card p, 
+.plan-card ul li,
+.card p,
+.card ul li {
+    color: #cbd5e1 !important; 
+}
+
+/* 7. Ajuste para los checks (✓) o íconos si son texto */
+.plan-card ul li::marker,
+.check-icon {
+    color: #00a4ff !important;
+}
