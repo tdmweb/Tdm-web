@@ -288,62 +288,110 @@ tr:nth-child(even) {
     background-color: #f8fafc;
 }
 
-/* Planes */
+/* --- Sección de Planes Rediseñada --- */
 .planes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
+    align-items: stretch;
 }
 
 .plan-card {
     background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     border: 1px solid #e2e8f0;
     display: flex;
     flex-direction: column;
-}
-
-.plan-card h3 {
-    color: var(--dark);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.plan-card ul {
-    list-style: none;
-    margin-bottom: 2rem;
-    text-align: left;
-    flex-grow: 1;
-}
-
-.plan-card ul li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.plan-card ul li::before {
+.plan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
+}
+
+/* Estilo especial para el Plan Destacado / Más Elegido */
+.plan-popular {
+    border: 2px solid var(--primary);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.12);
+}
+
+.badge-popular {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    padding: 0.3rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.plan-header h3 {
+    color: var(--dark);
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.plan-subtitle {
+    color: var(--gray);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.plan-body {
+    flex-grow: 1;
+    margin-bottom: 2rem;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+}
+
+.plan-features li {
+    margin-bottom: 0.9rem;
+    padding-left: 1.6rem;
+    position: relative;
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.4;
+}
+
+.plan-features li::before {
     content: '✓';
     color: var(--primary);
     position: absolute;
     left: 0;
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
-/* Footer CTA */
-footer {
-    background: var(--dark);
-    color: white;
+.plan-footer {
     text-align: center;
-    padding: 4rem 2rem;
 }
 
-footer h2 { margin-bottom: 1rem; }
-footer p { margin-bottom: 2rem; color: #cbd5e1; }
-
+.plan-footer .btn {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
 /* Responsive para Celulares y Menú Hamburguesa */
 @media (max-width: 768px) {
     .menu-toggle {
