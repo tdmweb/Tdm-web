@@ -1,16 +1,20 @@
 /* ==========================================
    1. VARIABLES Y RESET GLOBAL
-   ================================---------- */
+   ========================================== */
 :root {
-    --primary-color: #1a1a1a;
-    --accent-color: #5c33f6;
-    --accent-hover: #4522d0;
-    --bg-light: #f8f9fa;
-    --bg-white: #ffffff;
-    --text-main: #333333;
-    --text-muted: #666666;
-    --border-color: #eaeaea;
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --bg-dark: #0a0c10;
+    --bg-card: #121620;
+    --bg-card-hover: #181e2c;
+    --border-color: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    
+    /* Colores de acento */
+    --primary: #3b82f6; /* Azul TDM */
+    --nube-color: #3b82f6; /* Azul Tiendanube */
+    --negocio-color: #10b981; /* Verde Tienda Negocio */
+    --whatsapp: #25d366;
+    
     --transition: all 0.3s ease;
 }
 
@@ -26,228 +30,285 @@ html {
 }
 
 body {
-    background-color: var(--bg-white);
+    background-color: var(--bg-dark);
     color: var(--text-main);
     line-height: 1.6;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 /* ==========================================
-   2. CABECERA Y NAVEGACIÓN
-   ================================---------- */
+   2. NAVEGACIÓN Y HEADER (Logo a 80px)
+   ========================================== */
 header {
-    background: var(--bg-white);
-    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
+    background: rgba(10, 12, 16, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
     z-index: 1000;
 }
 
-.navbar {
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Control estricto para que el logo nunca se expanda de más */
+/* --- LOGO A 80PX --- */
 .logo img {
-    max-height: 40px;
+    height: 80px; 
     width: auto;
     object-fit: contain;
 }
 
 .nav-links {
     display: flex;
+    gap: 30px;
     list-style: none;
-    gap: 25px;
     align-items: center;
 }
 
-.nav-item {
+.nav-item, .nav-link {
+    color: var(--text-muted);
     text-decoration: none;
-    color: var(--text-main);
     font-weight: 500;
     font-size: 0.95rem;
     transition: var(--transition);
 }
 
-.nav-item:hover {
-    color: var(--accent-color);
+.nav-item:hover, .nav-link:hover {
+    color: var(--text-main);
 }
 
 .menu-toggle {
     display: none;
+    flex-direction: column;
+    gap: 6px;
     cursor: pointer;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    background: none;
-    border: none;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-main);
+    border-radius: 3px;
+    transition: var(--transition);
 }
 
 /* ==========================================
-   3. SECCIÓN HERO (PRINCIPAL)
-   ================================---------- */
-.hero-section {
-    padding: 100px 0 80px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ece9ff 100%);
+   3. HERO SECTION (Inicio)
+   ========================================== */
+#inicio {
+    padding: 120px 20px;
     text-align: center;
-}
-
-.hero-section h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
-}
-
-.hero-section p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    max-width: 700px;
-    margin: 0 auto 30px auto;
-}
-
-.hero-buttons {
+    background: radial-gradient(circle at top, #1e293b 0%, var(--bg-dark) 60%);
+    min-height: 80vh;
     display: flex;
-    gap: 15px;
+    align-items: center;
     justify-content: center;
 }
 
-.btn-primary, .btn-secondary {
-    padding: 12px 25px;
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
-    text-decoration: none;
     transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
-.btn-primary {
-    background-color: var(--accent-color);
-    color: var(--bg-white);
-}
-
-.btn-primary:hover {
-    background-color: var(--accent-hover);
-}
-
-.btn-secondary {
-    background-color: var(--bg-white);
-    color: var(--primary-color);
-    border: 1px solid var(--border-color);
-}
-
-.btn-secondary:hover {
-    border-color: var(--primary-color);
+.btn:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
 }
 
 /* ==========================================
-   4. SECCIÓN BENEFICIOS / PARTNERS
-   ================================---------- */
-.beneficios-section {
-    padding: 80px 0;
-    background-color: var(--bg-light);
+   4. SECCIÓN PARTNERS (Diseño tipo Lovable)
+   ========================================== */
+.partners-section {
+    padding: 80px 20px;
+    background-color: var(--bg-dark);
 }
 
-.beneficios-section h2 {
+.partners-inner {
+    max-width: 1000px;
+    margin: 0 auto;
     text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-    color: var(--primary-color);
 }
 
-.beneficios-grid {
+.partners-tag {
+    display: inline-block;
+    color: var(--nube-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.partners-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    margin-top: 40px;
+    text-align: left;
 }
 
-.beneficio-card {
-    background: var(--bg-white);
-    border-radius: 16px;
-    padding: 35px 30px;
-    box-shadow: var(--shadow);
+.partner-card {
+    background: var(--bg-card);
     border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 40px;
     transition: var(--transition);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
-.beneficio-card:hover {
+.partner-card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent-color);
+    border-color: #334155;
+    background: var(--bg-card-hover);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.beneficio-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    color: var(--primary-color);
-}
-
-.beneficio-card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
+.partner-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     margin-bottom: 20px;
 }
 
+.partner-icon {
+    font-size: 2rem;
+    background: rgba(255,255,255,0.05);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.partner-card h3 {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.partner-highlight {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 25px;
+}
+
+/* El segundo partner (Tienda Negocio) con acento verde */
+.partner-card:nth-child(2) .partner-highlight {
+    color: var(--negocio-color);
+}
+
+.partner-features {
+    list-style: none;
+    margin-bottom: 40px;
+    flex-grow: 1;
+}
+
+.partner-features li {
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.partner-features li::before {
+    content: "✓";
+    color: var(--negocio-color);
+    font-weight: bold;
+}
+
+.btn-partner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-partner:hover {
+    background: white;
+    color: var(--bg-dark);
+}
+
 /* ==========================================
-   5. SECCIÓN ESTADÍSTICAS
-   ================================---------- */
-.stats-section {
-    padding: 60px 0;
-    background-color: var(--primary-color);
-    color: var(--bg-white);
+   5. ESTADÍSTICAS
+   ========================================== */
+#stats {
+    padding: 60px 20px;
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
     text-align: center;
 }
 
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-}
-
-.stat-item h3 {
-    font-size: 2.5rem;
-    color: var(--accent-color);
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary);
     margin-bottom: 5px;
 }
 
-.stat-item p {
-    color: #ccc;
-    font-size: 1rem;
+.stat-label {
+    color: var(--text-muted);
+    font-size: 1.1rem;
 }
 
 /* ==========================================
-   6. SECCIÓN PROYECTOS
-   ================================---------- */
-.proyectos-section {
-    padding: 80px 0;
-    background-color: var(--bg-white);
+   6. PROYECTOS Y NOSOTROS
+   ========================================== */
+#proyectos, #nosotros {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.proyectos-section h2 {
+.section-title {
+    font-size: 2.5rem;
     text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-    color: var(--primary-color);
+    margin-bottom: 50px;
 }
 
 .proyectos-grid {
@@ -257,16 +318,27 @@ header {
 }
 
 .proyecto-card {
-    background: var(--bg-light);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
 .proyecto-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow);
+    border-color: var(--primary);
+}
+
+.proyecto-img {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1e293b; /* Fallback si no hay imagen */
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .proyecto-info {
@@ -274,151 +346,93 @@ header {
 }
 
 .proyecto-info h3 {
-    font-size: 1.2rem;
     margin-bottom: 10px;
-    color: var(--primary-color);
+    font-size: 1.3rem;
 }
 
 .proyecto-info p {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.nosotros-text {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.nosotros-text p {
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
 }
 
 /* ==========================================
-   7. SECCIÓN DE PLANES Y CARRUSEL
-   ================================---------- */
+   7. PLANES Y CARRUSEL
+   ========================================== */
 .planes-section {
-    padding: 80px 0;
-    background-color: var(--bg-light);
+    padding: 100px 20px;
+    background-color: var(--bg-dark);
+}
+
+.planes-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .planes-section h2 {
     text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-    color: var(--primary-color);
+    font-size: 2.5rem;
 }
 
 .section-subtitle {
     text-align: center;
     color: var(--text-muted);
     margin-bottom: 40px;
+    font-size: 1.1rem;
 }
 
 .carrusel-wrapper {
     position: relative;
     display: flex;
     align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
 }
 
-#planes-grid {
+.planes-grid {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    gap: 20px;
-    padding: 20px 10px;
-    width: 100%;
+    gap: 25px;
+    padding: 20px 5px;
     scrollbar-width: none;
-    -ms-overflow-style: none;
 }
 
-#planes-grid::-webkit-scrollbar {
+.planes-grid::-webkit-scrollbar {
     display: none;
 }
 
-#planes-grid > * {
-    flex: 0 0 85vw;
-    max-width: 320px;
+.plan-card {
+    flex: 0 0 calc(33.333% - 17px);
+    min-width: 300px;
     scroll-snap-align: center;
-    background: var(--bg-white);
-    border-radius: 16px;
-    padding: 35px 30px;
-    box-shadow: var(--shadow);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 40px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     transition: var(--transition);
-    border: 1px solid var(--border-color);
 }
 
-#planes-grid > *:hover {
+.plan-card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent-color);
 }
 
-.plan-card h3 {
-    font-size: 1.4rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.plan-desc {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-    min-height: 40px;
-}
-
-.plan-price {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.plan-price span {
-    font-size: 0.85rem;
-    font-weight: 400;
-    color: var(--text-muted);
-}
-
-.plan-card ul {
-    list-style: none;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.plan-card ul li {
-    font-size: 0.9rem;
-    color: var(--text-main);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.plan-card ul li::before {
-    content: "✓";
-    color: var(--accent-color);
-    font-weight: bold;
-}
-
-.btn-plan {
-    display: block;
-    text-align: center;
-    background-color: var(--bg-light);
-    color: var(--primary-color);
-    border: 1px solid var(--border-color);
-    padding: 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.btn-plan:hover, .btn-plan.active {
-    background-color: var(--accent-color);
-    color: var(--bg-white);
-    border-color: var(--accent-color);
-}
-
-/* Tarjeta Destacada */
 .plan-card.popular {
-    border: 2px solid var(--accent-color);
+    border-color: var(--primary);
+    background: linear-gradient(180deg, rgba(59, 130, 246, 0.05) 0%, var(--bg-card) 100%);
     position: relative;
 }
 
@@ -427,108 +441,227 @@ header {
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--accent-color);
-    color: var(--bg-white);
-    padding: 4px 14px;
-    font-size: 0.75rem;
+    background: var(--primary);
+    color: white;
+    padding: 5px 15px;
     border-radius: 20px;
+    font-size: 0.8rem;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-/* Botones de Navegación del Carrusel */
-.carrusel-btn {
-    background-color: var(--bg-white);
-    color: var(--primary-color);
+.plan-desc {
+    color: var(--text-muted);
+    margin: 10px 0 20px 0;
+    font-size: 0.9rem;
+    min-height: 40px;
+}
+
+.plan-price {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.plan-price span {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.plan-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.plan-card ul li {
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 10px;
+}
+
+.btn-plan {
+    display: block;
+    text-align: center;
+    padding: 14px;
     border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-plan:hover, .btn-plan.active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* Botones del Carrusel */
+.carrusel-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: white;
     width: 45px;
     height: 45px;
     border-radius: 50%;
     cursor: pointer;
+    font-size: 1.2rem;
+    position: absolute;
     z-index: 10;
     display: none;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: var(--transition);
 }
 
-.carrusel-btn:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-white);
-    border-color: var(--accent-color);
+.prev-btn { left: -20px; }
+.next-btn { right: -20px; }
+
+/* ==========================================
+   8. TABLA COMPARATIVA (En sección Planes)
+   ========================================== */
+.table-responsive {
+    overflow-x: auto;
 }
 
-.prev-btn {
-    left: -25px;
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
 }
 
-.next-btn {
-    right: -25px;
+.comparison-table th, .comparison-table td {
+    padding: 18px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table th:first-child, .comparison-table td:first-child {
+    text-align: left;
+}
+
+.comparison-table th {
+    background: rgba(255,255,255,0.03);
+    font-weight: 600;
+    color: white;
+}
+
+.comparison-table td {
+    color: var(--text-muted);
+}
+
+.comparison-table strong {
+    color: white;
 }
 
 /* ==========================================
-   8. SECCIÓN PLATAFORMAS Y NOSOTROS
-   ================================---------- */
-.plataformas-section, .nosotros-section {
-    padding: 80px 0;
-    background-color: var(--bg-white);
+   9. SECCIÓN PLATAFORMAS (Fondo claro forzado por HTML)
+   ========================================== */
+/* Como tu HTML tiene style="background-color: #f8fafc;", 
+   forzamos que los textos adentro sean oscuros para que se lean bien */
+#plataformas {
+    padding: 80px 20px;
+    color: #1e293b; /* Texto oscuro */
 }
 
-.plataformas-section h2, .nosotros-section h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-    color: var(--primary-color);
+.plataformas-container {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.plataformas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+#plataformas h2, #plataformas h3, #plataformas strong {
+    color: #0f172a;
 }
 
-.plataforma-card {
-    background: var(--bg-light);
-    border-radius: 16px;
+#plataformas p, #plataformas ul, #plataformas li {
+    color: #334155;
+    line-height: 1.7;
+}
+
+.plat-desc {
+    background: white;
     padding: 30px;
-    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.plat-desc ul {
+    margin: 15px 0 15px 25px;
+}
+
+#plataformas table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+#plataformas th, #plataformas td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#plataformas th {
+    background: #f1f5f9;
+    font-weight: bold;
 }
 
 /* ==========================================
-   9. FOOTER
-   ================================---------- */
+   10. FOOTER
+   ========================================== */
 footer {
-    background-color: var(--primary-color);
-    color: var(--bg-white);
-    padding: 40px 0;
+    background: #050608;
+    padding: 80px 20px 40px 20px;
     text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+footer h2 {
+    margin-bottom: 15px;
 }
 
 footer p {
-    color: #aaa;
-    font-size: 0.9rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.btn-whatsapp {
+    background-color: var(--whatsapp);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebd5a;
 }
 
 /* ==========================================
-   10. MEDIA QUERIES RESPONSIVAS
-   ================================---------- */
+   11. MEDIA QUERIES (Celulares y Tablets)
+   ========================================== */
+@media (max-width: 992px) {
+    .plan-card {
+        flex: 0 0 calc(50% - 13px);
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: none; /* Se oculta para el menú hamburguesa */
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 100%;
         left: 0;
         width: 100%;
-        background: var(--bg-white);
+        background: var(--bg-card);
         padding: 20px;
         border-bottom: 1px solid var(--border-color);
-        box-shadow: var(--shadow);
     }
 
     .nav-links.active {
@@ -536,20 +669,24 @@ footer p {
     }
 
     .menu-toggle {
-        display: block;
+        display: flex;
     }
 
-    .hero-section h1 {
-        font-size: 2.2rem;
+    .hero-content h1 {
+        font-size: 2.5rem;
     }
-}
-
-@media (min-width: 768px) {
-    #planes-grid > * {
-        flex: 0 0 320px;
+    
+    .plan-card {
+        flex: 0 0 85vw;
     }
     
     .carrusel-btn {
-        display: flex;
+        display: none !important; /* En celu se usa el dedo (scroll snap) */
+    }
+
+    /* Tablas en celular */
+    .comparison-table th, .comparison-table td {
+        padding: 12px 10px;
+        font-size: 0.85rem;
     }
 }
