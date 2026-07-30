@@ -922,3 +922,58 @@ h1, h2, h3, h4, h5, h6,
 .check-icon {
     color: #00a4ff !important;
 }
+
+/* =========================================
+   FIX TABLA Y BLOQUE COMPARATIVO
+   ========================================= */
+
+/* 1. Estilizado nocturno de la Tabla Comparativa */
+table {
+    background-color: #111a28 !important;
+    color: #e2e8f0 !important;
+    border-collapse: collapse;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    background-color: transparent !important;
+    color: #e2e8f0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Encabezados de la tabla */
+th, thead tr {
+    background-color: #1a2638 !important;
+    color: #ffffff !important;
+}
+
+/* Filas intercaladas para mejor lectura */
+tr:nth-child(even) td {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+
+/* 2. Estilizado del bloque de texto (Tiendanube vs Tienda Negocio) */
+article, 
+.comparativa-container, 
+.comparativa-section, 
+.info-box, 
+.content-card {
+    background-color: #111a28 !important; /* Mismo fondo azul oscuro de las tarjetas */
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Forzar legibilidad de los textos dentro de la nota/artículo */
+article p, article li, article span,
+.comparativa-container p, .comparativa-container li {
+    color: #cbd5e1 !important; /* Gris claro de alta legibilidad */
+}
+
+article h2, article h3, article h4, article strong,
+.comparativa-container h2, .comparativa-container h3, .comparativa-container strong {
+    color: #ffffff !important;
+}
