@@ -242,53 +242,39 @@ nav a:hover {
 
 
 /* ==========================================================
-   3. SECCIÓN PLANES (4 Tarjetas + Tabla)
+   CORRECCIÓN DE GRILLA Y TARJETAS DE PLANES
    ========================================================== */
-.pricing-section {
-    background-color: #070d18; /* Sutil contraste para separar secciones */
-}
 
-.pricing-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.pricing-subtitle {
-    text-align: center;
-    color: var(--text-muted);
-    max-width: 650px;
-    margin: 0 auto 3.5rem auto;
-    font-size: 1.1rem;
-}
-
-.pricing-grid.four-cards {
+.pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
     align-items: stretch;
+    margin-top: 2.5rem;
 }
 
 .pricing-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-card);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 2.2rem;
     display: flex;
     flex-direction: column;
     position: relative;
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
 }
 
 .pricing-card:hover {
     transform: translateY(-6px);
-    border-color: var(--border-hover);
-    background: var(--bg-card-hover);
+    border-color: #2563eb;
+    background: rgba(255, 255, 255, 0.06);
     box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
 }
 
 /* Tarjeta Destacada (Más Elegido) */
 .pricing-card.popular {
-    border-color: var(--primary);
+    border-color: #2563eb;
     background: rgba(37, 99, 235, 0.05);
     box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
 }
@@ -298,7 +284,7 @@ nav a:hover {
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--primary);
+    background: #2563eb;
     color: white;
     font-size: 0.75rem;
     font-weight: 700;
@@ -320,7 +306,7 @@ nav a:hover {
 }
 
 .plan-desc {
-    color: var(--text-muted);
+    color: #cbd5e1;
     font-size: 0.9rem;
     min-height: 40px;
 }
@@ -341,13 +327,13 @@ nav a:hover {
     margin-bottom: 0.8rem;
     padding-left: 1.5rem;
     position: relative;
-    color: var(--text-muted);
+    color: #cbd5e1;
     font-size: 0.9rem;
 }
 
 .plan-features li::before {
     content: '✓';
-    color: var(--accent);
+    color: #38bdf8;
     position: absolute;
     left: 0;
     font-weight: bold;
@@ -367,18 +353,137 @@ nav a:hover {
     border-radius: 50px;
     font-weight: 600;
     font-size: 0.9rem;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
 }
 
 .btn-plan:hover, .btn-plan.primary-btn {
-    background: var(--primary);
-    border-color: var(--primary);
+    background: #2563eb;
+    border-color: #2563eb;
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}/* ==========================================================
+   CORRECCIÓN DE GRILLA Y TARJETAS DE PLANES
+   ========================================================== */
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+    margin-top: 2.5rem;
 }
 
+.pricing-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
+}
 
+.pricing-card:hover {
+    transform: translateY(-6px);
+    border-color: #2563eb;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+}
+
+/* Tarjeta Destacada (Más Elegido) */
+.pricing-card.popular {
+    border-color: #2563eb;
+    background: rgba(37, 99, 235, 0.05);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2563eb;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.plan-header {
+    margin-bottom: 1.5rem;
+}
+
+.plan-header h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.plan-desc {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    min-height: 40px;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.plan-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plan-features li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+}
+
+.plan-features li::before {
+    content: '✓';
+    color: #38bdf8;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.plan-footer {
+    margin-top: auto;
+}
+
+.btn-plan {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.btn-plan:hover, .btn-plan.primary-btn {
+    background: #2563eb;
+    border-color: #2563eb;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
 /* ==========================================================
    4. TABLA COMPARATIVA
    ========================================================== */
