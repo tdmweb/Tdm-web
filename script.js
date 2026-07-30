@@ -51,3 +51,26 @@ const statsSection = document.getElementById('stats');
 if(statsSection) {
     observer.observe(statsSection);
 }
+
+// --- Control del Carrusel de Planes ---
+const planesGrid = document.getElementById('planes-grid');
+const btnPrev = document.getElementById('prev-plan');
+const btnNext = document.getElementById('next-plan');
+
+if (planesGrid && btnPrev && btnNext) {
+    const scrollAmount = 340; 
+
+    btnPrev.addEventListener('click', () => {
+        planesGrid.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+
+    btnNext.addEventListener('click', () => {
+        planesGrid.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+}
