@@ -288,7 +288,7 @@ tr:nth-child(even) {
     background-color: #f8fafc;
 }
 
-/* --- Sección de Planes Rediseñada --- */
+/* --- Sección de Planes Premium (Rediseño) --- */
 .planes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -297,11 +297,11 @@ tr:nth-child(even) {
 }
 
 .plan-card {
-    background: white;
-    border-radius: 12px;
+    background: #ffffff;
+    border-radius: 16px;
     padding: 2.5rem 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -309,14 +309,14 @@ tr:nth-child(even) {
 }
 
 .plan-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
 }
 
-/* Estilo especial para el Plan Destacado / Más Elegido */
+/* Plan Destacado / Más Elegido */
 .plan-popular {
     border: 2px solid var(--primary);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.12);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.12);
 }
 
 .badge-popular {
@@ -326,12 +326,13 @@ tr:nth-child(even) {
     transform: translateX(-50%);
     background: var(--primary);
     color: white;
-    padding: 0.3rem 1.2rem;
+    padding: 0.35rem 1.4rem;
     font-size: 0.85rem;
     font-weight: 700;
     border-radius: 20px;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    text-transform: uppercase;
 }
 
 .plan-header {
@@ -343,14 +344,19 @@ tr:nth-child(even) {
 
 .plan-header h3 {
     color: var(--dark);
-    font-size: 1.4rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
 }
 
 .plan-subtitle {
     color: var(--gray);
     font-size: 0.95rem;
     font-weight: 500;
+    min-height: 2.4rem; /* Altura fija para alinear subtítulos perfectamente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .plan-body {
@@ -364,12 +370,12 @@ tr:nth-child(even) {
 }
 
 .plan-features li {
-    margin-bottom: 0.9rem;
-    padding-left: 1.6rem;
+    margin-bottom: 1rem;
+    padding-left: 1.8rem;
     position: relative;
     font-size: 0.95rem;
     color: #475569;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .plan-features li::before {
@@ -385,12 +391,38 @@ tr:nth-child(even) {
     text-align: center;
 }
 
-.plan-footer .btn {
+/* Botones modernos tipo píldora */
+.btn-plan {
+    display: block;
     width: 100%;
-    padding: 0.8rem 1rem;
-    border-radius: 6px;
+    padding: 0.85rem 1.5rem;
+    background: #f1f5f9;
+    color: var(--dark);
+    text-decoration: none;
+    border-radius: 50px;
     font-weight: 600;
-    letter-spacing: 0.3px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.btn-plan:hover {
+    background: #e2e8f0;
+    color: var(--primary);
+}
+
+.btn-primary-plan {
+    background: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.btn-primary-plan:hover {
+    background: var(--secondary);
+    color: white;
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.35);
 }
 /* Responsive para Celulares y Menú Hamburguesa */
 @media (max-width: 768px) {
