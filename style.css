@@ -1,26 +1,24 @@
-/* ==========================================================
-   TDM WEB - ESTILOS GENERALES Y CONFIGURACIÓN BASE
-   Estética: Dark Mode / Glassmorphism / Agencia Tech
-   ========================================================== */
-
+/* ==========================================
+   1. VARIABLES Y RESET GLOBAL
+   ================================---------- */
 :root {
-    --bg-main: #09101d;
-    --bg-card: rgba(255, 255, 255, 0.03);
-    --bg-card-hover: rgba(255, 255, 255, 0.06);
-    --border-card: rgba(255, 255, 255, 0.1);
-    --border-hover: #2563eb;
-    --primary: #2563eb;
-    --primary-hover: #1d4ed8;
-    --accent: #38bdf8;
-    --text-main: #ffffff;
-    --text-muted: #cbd5e1;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --primary-color: #1a1a1a;
+    --accent-color: #5c33f6;
+    --accent-hover: #4522d0;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --border-color: #eaeaea;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 html {
@@ -28,547 +26,516 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--bg-main);
+    background-color: var(--bg-white);
     color: var(--text-main);
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
-/* ==========================================================
-   COMPONENTES COMUNES DE SECCIÓN
-   ========================================================== */
-section {
-    padding: 6rem 2rem;
-    position: relative;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.section-title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    text-align: center;
-    color: var(--text-main);
-    margin-bottom: 1rem;
-    letter-spacing: -0.5px;
-}
-
-.section-tag {
-    display: inline-block;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
-    text-align: center;
-    width: 100%;
-}
-
-
-/* ==========================================================
-   1. HEADER / NAVEGACIÓN
-   ========================================================== */
+/* ==========================================
+   2. CABECERA Y NAVEGACIÓN
+   ================================---------- */
 header {
-    position: fixed;
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(9, 16, 29, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-card);
     z-index: 1000;
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 3rem;
+    height: 70px;
 }
 
 .logo {
+    font-size: 1.5rem;
     font-weight: 800;
-    font-size: 1.25rem;
-    color: white;
+    color: var(--primary-color);
     text-decoration: none;
-    letter-spacing: 1px;
 }
 
-nav ul {
-    list-style: none;
+.nav-links {
     display: flex;
-    gap: 2rem;
+    list-style: none;
+    gap: 30px;
     align-items: center;
 }
 
-nav a {
-    color: var(--text-muted);
+.nav-item {
     text-decoration: none;
-    font-size: 0.95rem;
+    color: var(--text-main);
     font-weight: 500;
     transition: var(--transition);
 }
 
-nav a:hover {
-    color: white;
+.nav-item:hover {
+    color: var(--accent-color);
 }
 
-.nav-cta {
-    background: var(--primary);
-    color: white !important;
-    padding: 0.6rem 1.2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.nav-cta:hover {
-    background: var(--primary-hover);
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
-}
-
-
-/* ==========================================================
-   2. SECCIÓN PARTNERS OFICIALES (Estética Base)
-   ========================================================== */
-.partners-section {
-    background-color: var(--bg-main);
-}
-
-.partners-inner {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.partners-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
-    margin-top: 2rem;
-    align-items: stretch;
-}
-
-.partner-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-card);
-    border-radius: 20px;
-    padding: 2.5rem;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    transition: var(--transition);
-}
-
-.partner-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--border-hover);
-    background: var(--bg-card-hover);
-    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
-}
-
-.partner-icon-title {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.2rem;
-}
-
-.partner-icon {
+.menu-toggle {
+    display: none;
+    cursor: pointer;
     font-size: 1.5rem;
-    background: rgba(37, 99, 235, 0.15);
-    width: 50px;
-    height: 50px;
+    color: var(--primary-color);
+}
+
+/* ==========================================
+   3. SECCIÓN HERO (PRINCIPAL)
+   ================================---------- */
+.hero-section {
+    padding: 100px 0 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ece9ff 100%);
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.hero-buttons {
     display: flex;
-    align-items: center;
+    gap: 15px;
     justify-content: center;
-    border-radius: 12px;
 }
 
-.partner-icon-title h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    margin: 0;
-}
-
-.partner-highlight {
-    font-size: 1.15rem;
+.btn-primary, .btn-secondary {
+    padding: 12px 25px;
+    border-radius: 8px;
     font-weight: 600;
-    color: var(--accent);
-    margin-bottom: 1.8rem;
-    line-height: 1.4;
-}
-
-.partner-features {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2rem;
-    flex-grow: 1;
-}
-
-.partner-features li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
-    position: relative;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-.partner-features li::before {
-    content: '✓';
-    color: var(--accent);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
-
-.btn-partner {
-    display: block;
-    width: 100%;
-    padding: 0.9rem 1.5rem;
-    background: transparent;
-    color: white;
     text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.95rem;
     transition: var(--transition);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-secondary {
+    background-color: var(--bg-white);
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary-color);
+}
+
+/* ==========================================
+   4. SECCIÓN BENEFICIOS / PARTNERS
+   ================================---------- */
+.beneficios-section {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.beneficios-section h2 {
     text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
 }
 
-.btn-partner:hover {
-    background: var(--primary);
-    border-color: var(--primary);
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-}
-
-
-/* ==========================================================
-   CORRECCIÓN DE GRILLA Y TARJETAS DE PLANES
-   ========================================================== */
-
-.pricing-grid {
+.beneficios-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
-    align-items: stretch;
-    margin-top: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
-.pricing-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 2.2rem;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    text-align: left;
-}
-
-.pricing-card:hover {
-    transform: translateY(-6px);
-    border-color: #2563eb;
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
-}
-
-/* Tarjeta Destacada (Más Elegido) */
-.pricing-card.popular {
-    border-color: #2563eb;
-    background: rgba(37, 99, 235, 0.05);
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
-}
-
-.popular-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #2563eb;
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.3rem 1rem;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.plan-header {
-    margin-bottom: 1.5rem;
-}
-
-.plan-header h3 {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 0.5rem;
-}
-
-.plan-desc {
-    color: #cbd5e1;
-    font-size: 0.9rem;
-    min-height: 40px;
-}
-
-.plan-features {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2rem;
-    flex-grow: 1;
-}
-
-.plan-features ul {
-    list-style: none;
-    padding: 0;
-}
-
-.plan-features li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
-    position: relative;
-    color: #cbd5e1;
-    font-size: 0.9rem;
-}
-
-.plan-features li::before {
-    content: '✓';
-    color: #38bdf8;
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
-
-.plan-footer {
-    margin-top: auto;
-}
-
-.btn-plan {
-    display: block;
-    width: 100%;
-    padding: 0.85rem 1rem;
-    background: transparent;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    text-align: center;
-}
-
-.btn-plan:hover, .btn-plan.primary-btn {
-    background: #2563eb;
-    border-color: #2563eb;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-}/* ==========================================================
-   CORRECCIÓN DE GRILLA Y TARJETAS DE PLANES
-   ========================================================== */
-
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
-    align-items: stretch;
-    margin-top: 2.5rem;
-}
-
-.pricing-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 2.2rem;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    text-align: left;
-}
-
-.pricing-card:hover {
-    transform: translateY(-6px);
-    border-color: #2563eb;
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
-}
-
-/* Tarjeta Destacada (Más Elegido) */
-.pricing-card.popular {
-    border-color: #2563eb;
-    background: rgba(37, 99, 235, 0.05);
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
-}
-
-.popular-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #2563eb;
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.3rem 1rem;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.plan-header {
-    margin-bottom: 1.5rem;
-}
-
-.plan-header h3 {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 0.5rem;
-}
-
-.plan-desc {
-    color: #cbd5e1;
-    font-size: 0.9rem;
-    min-height: 40px;
-}
-
-.plan-features {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2rem;
-    flex-grow: 1;
-}
-
-.plan-features ul {
-    list-style: none;
-    padding: 0;
-}
-
-.plan-features li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
-    position: relative;
-    color: #cbd5e1;
-    font-size: 0.9rem;
-}
-
-.plan-features li::before {
-    content: '✓';
-    color: #38bdf8;
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
-
-.plan-footer {
-    margin-top: auto;
-}
-
-.btn-plan {
-    display: block;
-    width: 100%;
-    padding: 0.85rem 1rem;
-    background: transparent;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    text-align: center;
-}
-
-.btn-plan:hover, .btn-plan.primary-btn {
-    background: #2563eb;
-    border-color: #2563eb;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-}
-/* ==========================================================
-   4. TABLA COMPARATIVA
-   ========================================================== */
-.comparison-container {
-    margin-top: 5rem;
-}
-
-.table-responsive {
-    overflow-x: auto;
-}
-
-.comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--bg-card);
+.beneficio-card {
+    background: var(--bg-white);
     border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--border-card);
+    padding: 35px 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.comparison-table th, 
-.comparison-table td {
-    padding: 1.1rem 1.4rem;
-    text-align: center;
-    font-size: 0.95rem;
+.beneficio-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.beneficio-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.beneficio-card p {
     color: var(--text-muted);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
 }
 
-.comparison-table th:first-child, 
-.comparison-table td:first-child {
-    text-align: left;
-    color: white;
-    font-weight: 500;
+/* ==========================================
+   5. SECCIÓN ESTADÍSTICAS
+   ================================---------- */
+.stats-section {
+    padding: 60px 0;
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    text-align: center;
 }
 
-.comparison-table th {
-    background: rgba(37, 99, 235, 0.15);
-    color: white;
-    font-weight: 600;
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    color: #ccc;
     font-size: 1rem;
 }
 
-.comparison-table tr:last-child td {
-    border-bottom: none;
+/* ==========================================
+   6. SECCIÓN PROYECTOS
+   ================================---------- */
+.proyectos-section {
+    padding: 80px 0;
+    background-color: var(--bg-white);
 }
 
-
-/* ==========================================================
-   5. FOOTER
-   ========================================================== */
-footer {
+.proyectos-section h2 {
     text-align: center;
-    padding: 5rem 2rem 3rem 2rem;
-    background: #050b14;
-    color: white;
-    border-top: 1px solid var(--border-card);
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
 }
 
-footer h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.proyecto-card {
+    background: var(--bg-light);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.proyecto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.proyecto-info {
+    padding: 25px;
+}
+
+.proyecto-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.proyecto-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   7. SECCIÓN DE PLANES Y CARRUSEL
+   ================================---------- */
+.planes-section {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.planes-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.carrusel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#planes-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px 10px;
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#planes-grid::-webkit-scrollbar {
+    display: none;
+}
+
+#planes-grid > * {
+    flex: 0 0 85vw;
+    max-width: 320px;
+    scroll-snap-align: center;
+    background: var(--bg-white);
+    border-radius: 16px;
+    padding: 35px 30px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+#planes-grid > *:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.plan-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.plan-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    min-height: 40px;
+}
+
+.plan-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.plan-price span {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.plan-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.plan-card ul li {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.plan-card ul li::before {
+    content: "✓";
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.btn-plan {
+    display: block;
+    text-align: center;
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-plan:hover, .btn-plan.active {
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+    border-color: var(--accent-color);
+}
+
+/* Tarjeta Destacada */
+.plan-card.popular {
+    border: 2px solid var(--accent-color);
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-color);
+    color: var(--bg-white);
+    padding: 4px 14px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Botones de Navegación del Carrusel */
+.carrusel-btn {
+    background-color: var(--bg-white);
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: var(--transition);
+}
+
+.carrusel-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+    border-color: var(--accent-color);
+}
+
+.prev-btn {
+    left: -25px;
+}
+
+.next-btn {
+    right: -25px;
+}
+
+/* ==========================================
+   8. SECCIÓN PLATAFORMAS Y NOSOTROS
+   ================================---------- */
+.plataformas-section, .nosotros-section {
+    padding: 80px 0;
+    background-color: var(--bg-white);
+}
+
+.plataformas-section h2, .nosotros-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.plataformas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+. plataforma-card {
+    background: var(--bg-light);
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+}
+
+/* ==========================================
+   9. FOOTER
+   ================================---------- */
+footer {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    padding: 40px 0;
+    text-align: center;
 }
 
 footer p {
-    color: var(--text-muted);
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
+    color: #aaa;
+    font-size: 0.9rem;
 }
 
-
-/* ==========================================================
-   6. RESPONSIVE DESIGN (Móviles y Tablets)
-   ========================================================== */
+/* ==========================================
+   10. MEDIA QUERIES RESPONSIVAS
+   ================================---------- */
 @media (max-width: 768px) {
-    header {
-        padding: 1rem 1.5rem;
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-white);
+        padding: 20px;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow);
     }
-    nav ul {
-        display: none; /* O menú hamburguesa si ya lo tenías configurado */
+
+    .nav-links.active {
+        display: flex;
     }
-    section {
-        padding: 4rem 1.2rem;
+
+    .menu-toggle {
+        display: block;
     }
-    .section-title {
-        font-size: 1.8rem;
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    #planes-grid > * {
+        flex: 0 0 320px;
+    }
+    
+    .carrusel-btn {
+        display: flex;
     }
 }
