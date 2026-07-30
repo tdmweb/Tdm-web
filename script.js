@@ -1,75 +1,86 @@
-// --- Lógica del Menú Hamburguesa en Celular ---
-const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
-const navItems = document.querySelectorAll('.nav-item');
+document.addEventListener('DOMContentLoaded', () => {
 
-if (mobileMenu && navLinks) {
-    mobileMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+    // --- 1. Lógica del Menú Hamburguesa en Celular ---
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    // Seleccionamos los enlaces directamente o por clase nav-item
+    const navItems = document.querySelectorAll('.nav-links a, .nav-item');
 
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            navLinks.classList.remove('active');
+    if (mobileMenu && navLinks) {
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
-    });
-}
 
-// --- Animación de los Contadores de Estadísticas ---
-const counters = document.querySelectorAll('.counter');
-const speed = 200;
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    }
 
-const animateCounters = () => {
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const inc = target / speed;
+    // --- 2. Animación de los Contadores de Estadísticas ---
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
 
-            if (count < target) {
-                counter.innerText = Math.ceil(count + inc);
-                setTimeout(updateCount, 10);
-            } else {
-                counter.innerText = target;
+    const animateCounters = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 10);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                observer.unobserve(entry.target);
             }
+        });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.getElementById('stats');
+    if (statsSection) {
+        observer.observe(statsSection);
+    }
+
+    // --- 3. Control del Carrusel de Planes (Dinámico) ---
+    const planesGrid = document.getElementById('planes-grid');
+    const btnPrev = document.getElementById('prev-plan');
+    const btnNext = document.getElementById('next-plan');
+
+    if (planesGrid && btnPrev && btnNext) {
+        
+        // Función para obtener el salto exacto según el tamaño actual de la tarjeta
+        const getScrollStep = () => {
+            const card = planesGrid.querySelector('.plan-card');
+            // Ancho de la tarjeta + 24px de gap aproximadamente
+            return card ? card.offsetWidth + 24 : 340; 
         };
-        updateCount();
-    });
-}
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            animateCounters();
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-const statsSection = document.getElementById('stats');
-if(statsSection) {
-    observer.observe(statsSection);
-}
-
-// --- Control del Carrusel de Planes ---
-const planesGrid = document.getElementById('planes-grid');
-const btnPrev = document.getElementById('prev-plan');
-const btnNext = document.getElementById('next-plan');
-
-if (planesGrid && btnPrev && btnNext) {
-    const scrollAmount = 340; 
-
-    btnPrev.addEventListener('click', () => {
-        planesGrid.scrollBy({
-            left: -scrollAmount,
-            behavior: 'smooth'
+        btnNext.addEventListener('click', () => {
+            planesGrid.scrollBy({
+                left: getScrollStep(),
+                behavior: 'smooth'
+            });
         });
-    });
 
-    btnNext.addEventListener('click', () => {
-        planesGrid.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
+        btnPrev.addEventListener('click', () => {
+            planesGrid.scrollBy({
+                left: -getScrollStep(),
+                behavior: 'smooth'
+            });
         });
-    });
-}
+    }
+
+});
