@@ -182,7 +182,7 @@ h2.section-title::after {
     margin-bottom: 1rem;
 }
 
-/* Stats */
+/* Stats Rediseñado */
 #stats {
     background: var(--dark);
     color: white;
@@ -200,25 +200,47 @@ h2.section-title::after {
     text-align: center;
 }
 
+/* Tarjeta con efecto cristal */
 .stat-box {
-    padding: 2rem;
-    background: rgba(255,255,255,0.05);
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.1);
+    padding: 2.5rem 2rem;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    cursor: default;
 }
 
+/* Efecto de elevación y luz al pasar el mouse */
+.stat-box:hover {
+    transform: translateY(-8px);
+    border-color: rgba(56, 189, 248, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 
+                0 0 25px rgba(37, 99, 235, 0.25);
+}
+
+/* Número con gradiente celeste/azul */
 .stat-number {
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-weight: 800;
-    color: var(--accent);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0.5rem;
+    
+    /* Aplicar gradiente al texto */
+    background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .stat-label {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    color: #94a3b8;
+    font-weight: 500;
     margin-top: 0.5rem;
+    line-height: 1.4;
 }
 
 /* Proyectos */
