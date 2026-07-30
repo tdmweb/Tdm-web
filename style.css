@@ -326,6 +326,7 @@ tr:nth-child(even) {
 .planes-grid {
     display: flex;
     gap: 1.5rem;
+    align-items: stretch; /* FIX ALTURA: Obliga a todas las tarjetas a tener el mismo alto */
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -399,7 +400,10 @@ tr:nth-child(even) {
     font-size: 0.95rem;
     text-align: center;
     margin-bottom: 1.2rem;
-    min-height: 2.5rem;
+    min-height: 2.8rem; /* FIX ALTURA: Iguala la altura de las bajadas de texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .plan-price {
@@ -416,6 +420,13 @@ tr:nth-child(even) {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--gray);
+}
+
+/* Contenedor intermedio de la lista */
+.plan-features {
+    flex-grow: 1; /* FIX ALTURA: Estira la lista para absorber espacios en blanco */
+    display: flex;
+    flex-direction: column;
 }
 
 .plan-card ul {
@@ -442,6 +453,11 @@ tr:nth-child(even) {
     font-size: 1.1rem;
 }
 
+/* Pie de tarjeta */
+.plan-footer {
+    margin-top: auto; /* FIX ALTURA: Empuja los botones de todas las tarjetas al fondo */
+    width: 100%;
+}
 /* Botones dentro de la tarjeta */
 .btn-plan {
     display: block;
