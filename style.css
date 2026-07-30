@@ -1003,16 +1003,14 @@ table td {
 
 /* --- Corrección de la sección Plataformas para Dark Mode --- */
 
-/* 1. Fondo oscuro para la sección y sus tarjetas internas */
+/* Asegurate de que las llaves y los puntos y coma estén presentes */
 #plataformas,
 #plataformas .plat-desc,
 #plataformas .tabla-cara-container,
 #plataformas .veredicto-box {
-    background-color: #0f172a !important; /* Fondo azul oscuro uniforme */
-    border-color: #1e293b !important;
+    background-color: #0f172a !important;
 }
 
-/* 2. Forzar texto claro y legible en toda la sección de plataformas */
 #plataformas h2,
 #plataformas h3,
 #plataformas p,
@@ -1023,8 +1021,7 @@ table td {
     color: #f8fafc !important;
 }
 
-/* 3. Ajuste fino para notas al pie o textos secundarios para que no brillen tanto */
 #plataformas .tabla-nota,
 #plataformas .veredicto-note {
-    color: #94a3b8 !important; /* Gris claro sutil */
+    color: #94a3b8 !important;
 }
