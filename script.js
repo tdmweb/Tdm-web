@@ -8,7 +8,6 @@ if (mobileMenu && navLinks) {
         navLinks.classList.toggle('active');
     });
 
-    // Cerrar el menú automáticamente cuando se hace click en una opción del menú
     navItems.forEach(item => {
         item.addEventListener('click', () => {
             navLinks.classList.remove('active');
