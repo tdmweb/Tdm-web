@@ -48,7 +48,7 @@ nav {
 }
 
 .logo img {
-    height: 80px; /* Logo más grande como pediste */
+    height: 80px;
     width: auto;
     display: block;
 }
@@ -288,20 +288,34 @@ tr:nth-child(even) {
     background-color: #f8fafc;
 }
 
-/* --- Sección de Planes Premium (Rediseño) --- */
+/* --- SECCIÓN DE PLANES PREMIUM (OPTIMIZADA) --- */
+.planes-section-wrapper {
+    background-color: #f1f5f9;
+    padding: 6rem 2rem;
+    max-width: 100%;
+}
+
+.planes-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estructura de grilla flexible de 2 columnas arriba y 2 abajo (o adaptativa limpia) */
 .planes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas para darles buen ancho a las tarjetas */
+    gap: 2.5rem;
     align-items: stretch;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .plan-card {
     background: #ffffff;
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -310,29 +324,30 @@ tr:nth-child(even) {
 
 .plan-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 20px 35px rgba(37, 99, 235, 0.08);
 }
 
 /* Plan Destacado / Más Elegido */
 .plan-popular {
     border: 2px solid var(--primary);
-    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.12);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
 }
 
 .badge-popular {
     position: absolute;
-    top: -14px;
+    top: -16px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--primary);
     color: white;
-    padding: 0.35rem 1.4rem;
+    padding: 0.4rem 1.5rem;
     font-size: 0.85rem;
     font-weight: 700;
-    border-radius: 20px;
+    border-radius: 30px;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .plan-header {
@@ -344,7 +359,7 @@ tr:nth-child(even) {
 
 .plan-header h3 {
     color: var(--dark);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700;
     margin-bottom: 0.4rem;
 }
@@ -353,7 +368,7 @@ tr:nth-child(even) {
     color: var(--gray);
     font-size: 0.95rem;
     font-weight: 500;
-    min-height: 2.4rem; /* Altura fija para alinear subtítulos perfectamente */
+    min-height: 2.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -389,27 +404,29 @@ tr:nth-child(even) {
 
 .plan-footer {
     text-align: center;
+    margin-top: auto;
 }
 
-/* Botones modernos tipo píldora */
+/* Botones modernos tipo píldora reales */
 .btn-plan {
     display: block;
     width: 100%;
-    padding: 0.85rem 1.5rem;
-    background: #f1f5f9;
+    padding: 0.9rem 1.5rem;
+    background: #f8fafc;
     color: var(--dark);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
     font-size: 0.95rem;
     transition: all 0.3s ease;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #cbd5e1;
     text-align: center;
 }
 
 .btn-plan:hover {
     background: #e2e8f0;
     color: var(--primary);
+    border-color: #94a3b8;
 }
 
 .btn-primary-plan {
@@ -422,12 +439,40 @@ tr:nth-child(even) {
 .btn-primary-plan:hover {
     background: var(--secondary);
     color: white;
+    border-color: var(--secondary);
     box-shadow: 0 6px 15px rgba(37, 99, 235, 0.35);
 }
+
+/* Footer general */
+footer {
+    text-align: center;
+    padding: 5rem 2rem 3rem 2rem;
+    background: #09101d;
+    color: white;
+}
+
+footer h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+footer p {
+    color: #cbd5e1;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
 /* Responsive para Celulares y Menú Hamburguesa */
+@media (max-width: 900px) {
+    .planes-grid {
+        grid-template-columns: 1fr; /* 1 columna en pantallas chicas para que respiren bien */
+        max-width: 450px;
+    }
+}
+
 @media (max-width: 768px) {
     .menu-toggle {
-        display: flex; /* Muestra el botón hamburguesa en móviles */
+        display: flex;
     }
 
     .nav-links {
@@ -447,7 +492,7 @@ tr:nth-child(even) {
     }
 
     .nav-links.active {
-        max-height: 350px; /* Se despliega al hacer click */
+        max-height: 350px;
     }
 
     .hero-content h1 { font-size: 2.5rem; }
