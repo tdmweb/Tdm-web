@@ -288,32 +288,51 @@ tr:nth-child(even) {
     background-color: #f8fafc;
 }
 
-/* --- SECCIÓN DE PLANES PREMIUM (OPTIMIZADA) --- */
+/* --- SECCIÓN DE PLANES EN MODO CARRUSEL --- */
 .planes-section-wrapper {
     background-color: #f1f5f9;
     padding: 6rem 2rem;
     max-width: 100%;
+    overflow: hidden; /* Evita desbordes extraños */
 }
 
 .planes-inner {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
-/* Estructura de grilla flexible de 2 columnas arriba y 2 abajo (o adaptativa limpia) */
+/* Contenedor del Carrusel */
+.carrusel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .planes-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas para darles buen ancho a las tarjetas */
-    gap: 2.5rem;
-    align-items: stretch;
-    max-width: 900px;
-    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 1.5rem 0.5rem 2.5rem 0.5rem;
+    width: 100%;
+    /* Ocultar barra de scroll predeterminada pero mantener funcionalidad */
+    scrollbar-width: none; /* Firefox */
+}
+
+.planes-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .plan-card {
     background: #ffffff;
     border-radius: 20px;
     padding: 2.5rem;
+    min-width: 300px; /* Ancho fijo para cada tarjeta en el carrusel */
+    max-width: 320px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
     border: 1px solid #e2e8f0;
     display: flex;
@@ -359,7 +378,7 @@ tr:nth-child(even) {
 
 .plan-header h3 {
     color: var(--dark);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.4rem;
 }
@@ -407,7 +426,7 @@ tr:nth-child(even) {
     margin-top: auto;
 }
 
-/* Botones modernos tipo píldora reales */
+/* Botones modernos tipo píldora */
 .btn-plan {
     display: block;
     width: 100%;
@@ -443,25 +462,41 @@ tr:nth-child(even) {
     box-shadow: 0 6px 15px rgba(37, 99, 235, 0.35);
 }
 
-/* Footer general */
-footer {
-    text-align: center;
-    padding: 5rem 2rem 3rem 2rem;
-    background: #09101d;
+/* Botones de Flechas del Carrusel */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: var(--dark);
+    border: 1px solid #cbd5e1;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carrusel-btn:hover {
+    background: var(--primary);
     color: white;
+    border-color: var(--primary);
 }
 
-footer h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.carrusel-prev {
+    left: -20px;
 }
 
-footer p {
-    color: #cbd5e1;
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
+.carrusel-next {
+    right: -20px;
 }
-
 /* Responsive para Celulares y Menú Hamburguesa */
 @media (max-width: 900px) {
     .planes-grid {
