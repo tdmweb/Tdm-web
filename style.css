@@ -254,13 +254,41 @@ h2.section-title::after {
 .proyecto-info h3 { margin-bottom: 0.5rem; }
 .proyecto-info p { color: var(--gray); font-size: 0.9rem; margin-bottom: 1rem; }
 
+/* Link "Ver Tienda" dentro de la tarjeta de proyecto */
+.proyecto-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Etiqueta secundaria dentro de la tarjeta de proyecto (ej: "Tiendanube", "Concepto de Diseño") */
+.proyecto-tag {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
 /* Comparativa Tiendanube vs Tienda Negocio */
+#plataformas {
+    background-color: #f8fafc;
+}
+
 .plataformas-container {
     background: white;
     padding: 3rem;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
+
+.plataformas-title {
+    margin-bottom: 2rem;
+}
+
+.plataformas-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
 .plat-desc {
     margin-bottom: 2rem;
 }
@@ -286,6 +314,79 @@ th {
 
 tr:nth-child(even) {
     background-color: #f8fafc;
+}
+
+/* Tabla comparativa detallada (dentro de #planes) */
+.comparison-container {
+    margin-top: 4rem;
+}
+
+.comparison-title {
+    text-align: center;
+    color: var(--dark);
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+/* Tabla "Cara a Cara" (dentro de #plataformas) */
+.tabla-cara-container {
+    overflow-x: auto;
+    margin-top: 3rem;
+}
+
+.tabla-cara-title {
+    text-align: center;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+}
+
+.tabla-nota {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 0.8rem;
+    text-align: right;
+}
+
+/* Bloque "¿Cuál deberías elegir?" */
+.veredicto-box {
+    margin-top: 3rem;
+    background: #f1f5f9;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.veredicto-title {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.veredicto-intro {
+    margin-bottom: 1rem;
+}
+
+.veredicto-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.veredicto-item {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.veredicto-arrow {
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.veredicto-note {
+    font-size: 0.95rem;
+    color: var(--dark);
+    border-left: 4px solid var(--primary);
+    padding-left: 1rem;
 }
 
 /* --- SECCIÓN DE PLANES EN MODO CARRUSEL --- */
@@ -563,6 +664,13 @@ footer p {
     margin: 0 auto 2rem auto;
 }
 
+/* Texto de copyright al pie */
+.footer-copy {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
 /* Responsive para Celulares y Menú Hamburguesa */
 @media (max-width: 900px) {
     .planes-grid {
@@ -632,6 +740,20 @@ footer p {
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 0.8rem;
+}
+
+/* Título y bajada de la sección de Beneficios/Partners */
+.beneficios-heading {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.beneficios-subtext {
+    text-align: center;
+    color: #cbd5e1;
+    max-width: 600px;
+    margin: 0 auto 3.5rem auto;
+    font-size: 1.1rem;
 }
 
 .partners-grid {
