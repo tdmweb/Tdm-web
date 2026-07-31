@@ -543,31 +543,7 @@ h2.section-title::after {
     .next-btn { right: -10px; }
 }
 
-/* Footer general */
-footer {
-    text-align: center;
-    padding: 5rem 2rem 3rem 2rem;
-    background: #09101d;
-    color: white;
-}
 
-footer h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-footer p {
-    color: #cbd5e1;
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
-}
-
-/* Texto de copyright al pie */
-.footer-copy {
-    margin-top: 3rem;
-    font-size: 0.9rem;
-    color: var(--gray);
-}
 
 /* Responsive para Celulares y Menú Hamburguesa */
 @media (max-width: 900px) {
@@ -1293,5 +1269,268 @@ h1, h2, h3, h4, h5, h6,
 
     .nosotros-card {
         padding: 24px;
+    }
+}
+
+/* ==========================================
+   SECCIÓN CTA / ASESORÍA GRATUITA
+   ========================================== */
+
+.cta-section {
+    background: var(--dark, #090d16);
+    padding: 80px 20px;
+}
+
+.cta-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cta-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cta-badge {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cta-header h2 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.cta-subtitle {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.cta-card {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.cta-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.highlight-card {
+    border-color: rgba(37, 99, 235, 0.4);
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.cta-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.cta-card h3 {
+    font-size: 1.35rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.cta-card p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.btn-cta {
+    display: block;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-cta.btn-primary {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.btn-cta.btn-primary:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* ==========================================
+   FOOTER PRINCIPAL
+   ========================================== */
+
+.main-footer {
+    background: #060911;
+    color: #cbd5e1;
+    padding-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1fr;
+    gap: 40px;
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.footer-logo img {
+    height: 60px;
+    width: auto;
+    margin-bottom: 15px;
+}
+
+.footer-desc {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-links, .footer-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #38bdf8;
+}
+
+.footer-info li {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.footer-info span {
+    color: #ffffff;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.footer-info a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+    background: rgba(56, 189, 248, 0.1);
+    border-color: rgba(56, 189, 248, 0.3);
+    color: #38bdf8;
+}
+
+.footer-bottom {
+    background: #04060b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Adaptación Celular */
+@media (max-width: 850px) {
+    .cta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 }

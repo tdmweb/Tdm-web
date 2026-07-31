@@ -18,25 +18,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 // --- 2. Animación de los Contadores de Estadísticas ---
-// --- 2. Animación de los Contadores de Estadísticas ---
 const counters = document.querySelectorAll('.counter');
-const speed = 350;
 
 const animateCounters = () => {
     counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const inc = target / speed;
+        const target = +counter.getAttribute('data-target');
+        const duration = 1500; // Duración total en milisegundos (1.5 segundos)
+        const stepTime = 30;   // Intervalo de actualización en ms
+        const totalSteps = duration / stepTime;
+        const inc = target / totalSteps;
+        let count = 0;
 
-            if (count < target) {
-                counter.innerText = Math.ceil(count + inc);
-                setTimeout(updateCount, 10);
-            } else {
+        const updateCount = setInterval(() => {
+            count += inc;
+            if (count >= target) {
                 counter.innerText = target;
+                clearInterval(updateCount);
+            } else {
+                counter.innerText = Math.floor(count);
             }
-        };
-        updateCount();
+        }, stepTime);
     });
 };
 
