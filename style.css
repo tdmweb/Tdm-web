@@ -1046,3 +1046,55 @@ h1, h2, h3, h4, h5, h6,
     background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.5) 50%, transparent 100%);
     margin: 0 auto;
 }
+
+/* ==========================================
+   TABLA COMPARATIVA DE PLANES (.comparison-container)
+   ========================================== */
+
+.comparison-container {
+    margin: 4rem auto 2rem auto;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+.comparison-title {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Tabla con diseño de tarjeta/cristal */
+.comparison-container table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Cabecera (Features vs Planes) */
+.comparison-container th {
+    background: rgba(30, 41, 59, 0.85);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Celdas con espaciado para que no se encimen los nombres */
+.comparison-container td {
+    padding: 14px 20px;
+    color: #cbd5e1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.93rem;
+}
+
+/* Efecto al pasar el mouse por cada fila */
+.comparison-container tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
