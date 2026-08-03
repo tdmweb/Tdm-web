@@ -1962,3 +1962,338 @@ a.contact-item:hover .contact-val {
     color: #0055ff;
     font-weight: 700;
 }
+/* ============================================================
+   ============================================================
+   ADAPTACIÓN MOBILE COMPLETA (AGREGADO)
+   No se modifica ni un solo estilo de PC: todo lo de acá abajo
+   vive dentro de @media queries, así que en pantallas grandes
+   el sitio se ve exactamente igual que antes.
+   ============================================================
+   ============================================================ */
+
+/* ---------- TABLET (hasta 900px) ---------- */
+@media (max-width: 900px) {
+
+    nav {
+        padding: 0.7rem 1.2rem;
+    }
+
+    .logo img {
+        height: 55px;
+    }
+
+    section {
+        padding: 3.5rem 1.5rem;
+    }
+
+    h2.section-title {
+        font-size: 2rem;
+        margin-bottom: 2.2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.6rem;
+    }
+
+    .hero-content p {
+        font-size: 1.05rem;
+    }
+
+    .cta-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .partners-grid {
+        gap: 1.8rem;
+    }
+
+    #plataformas,
+    #nosotros,
+    .cta-section,
+    .partners-section {
+        padding: 3.5rem 1.2rem;
+    }
+}
+
+/* ---------- CELULARES GRANDES (hasta 768px) ---------- */
+@media (max-width: 768px) {
+
+    nav {
+        padding: 0.6rem 1rem;
+    }
+
+    .logo img {
+        height: 48px;
+    }
+
+    #inicio {
+        padding: 0 1.2rem;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    section {
+        padding: 3rem 1.2rem;
+    }
+
+    h2.section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Stats */
+    #stats {
+        padding: 3rem 1.2rem;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .stat-box {
+        padding: 1.8rem 1rem;
+    }
+
+    .stat-number {
+        font-size: 2.4rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    /* Proyectos */
+    .proyectos-section {
+        padding: 3rem 1rem;
+    }
+
+    .proyectos-section h2 {
+        font-size: 1.7rem;
+    }
+
+    /* Planes */
+    .planes-section {
+        padding: 3rem 1.2rem;
+    }
+
+    .planes-section h2 {
+        font-size: 1.9rem;
+    }
+
+    .plan-card {
+        padding: 1.8rem 1.5rem;
+    }
+
+    /* Partners */
+    .partners-section {
+        padding: 3rem 1.2rem;
+    }
+
+    .partner-card {
+        padding: 1.8rem;
+    }
+
+    .beneficios-subtext {
+        font-size: 1rem;
+        margin-bottom: 2.2rem;
+    }
+
+    /* Plataformas */
+    #plataformas {
+        padding: 3rem 1rem;
+    }
+
+    .plataformas-header .section-title {
+        font-size: 1.7rem;
+    }
+
+    .plataformas-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .plat-desc {
+        padding: 18px;
+    }
+
+    .plat-desc h3 {
+        font-size: 1.15rem;
+    }
+
+    .tabla-cara-title,
+    .comparison-title {
+        font-size: 1.3rem;
+    }
+
+    .tabla-cara-container th,
+    .tabla-cara-container td,
+    .comparison-container th,
+    .comparison-container td {
+        padding: 12px 14px;
+        font-size: 0.85rem;
+    }
+
+    .veredicto-box {
+        padding: 1.6rem 1.3rem;
+    }
+
+    .veredicto-title {
+        font-size: 1.4rem;
+    }
+
+    /* Nosotros */
+    #nosotros {
+        padding: 3rem 1rem;
+    }
+
+    .nosotros-header .section-title {
+        font-size: 1.8rem;
+    }
+
+    /* CTA */
+    .cta-section {
+        padding: 3rem 1.2rem;
+    }
+
+    .cta-header h2 {
+        font-size: 1.7rem;
+    }
+
+    .cta-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .cta-card {
+        padding: 1.6rem;
+    }
+
+    /* Footer */
+    .footer-container {
+        padding: 0 1.2rem 2rem 1.2rem;
+        gap: 1.8rem;
+    }
+
+    .footer-logo img {
+        height: 55px;
+    }
+
+    /* Calculadora TDM */
+    .tdm-calc-section {
+        padding: 3rem 1rem;
+    }
+
+    .tdm-calc-container {
+        padding: 1.5rem;
+    }
+}
+
+/* ---------- CELULARES CHICOS (hasta 480px) ---------- */
+@media (max-width: 480px) {
+
+    .logo img {
+        height: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.92rem;
+    }
+
+    .btn {
+        padding: 0.65rem 1.3rem;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    h2.section-title {
+        font-size: 1.5rem;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.9rem;
+    }
+
+    .stat-box {
+        padding: 1.4rem 0.8rem;
+    }
+
+    .stat-number {
+        font-size: 1.9rem;
+    }
+
+    .stat-label {
+        font-size: 0.78rem;
+    }
+
+    .proyecto-card {
+        flex: 0 0 85%;
+    }
+
+    .plan-card {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .plan-price {
+        font-size: 1.6rem;
+    }
+
+    .partner-card {
+        padding: 1.4rem;
+    }
+
+    .partner-icon-title h3 {
+        font-size: 1.25rem;
+    }
+
+    .plat-desc,
+    .veredicto-box,
+    .nosotros-card,
+    .cta-card {
+        padding: 1.1rem;
+    }
+
+    .plataformas-header .section-title,
+    .nosotros-header .section-title {
+        font-size: 1.4rem;
+    }
+
+    .cta-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .tdm-calc-title {
+        font-size: 1.3rem;
+    }
+
+    .tdm-calc-results {
+        flex-direction: column;
+    }
+
+    .footer-links.grid-links {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-logo img {
+        height: 45px;
+    }
+}
