@@ -1809,11 +1809,12 @@ a.contact-item:hover .contact-val {
 }
 
 .tdm-calc-title {
-    color: #0055ff;
+    color: #0f172a; /* Azul muy oscuro / casi negro para que resalte perfecto */
     text-align: center;
     font-size: 1.6rem;
-    font-weight: 700;
-    margin: 0 0 0.3rem 0;
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+    display: block; /* Asegura que no quede oculto */
 }
 
 .tdm-calc-subtitle {
