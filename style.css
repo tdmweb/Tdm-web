@@ -2297,3 +2297,71 @@ a.contact-item:hover .contact-val {
         height: 45px;
     }
 }
+
+/* ============================================================
+   FIX: Tablas comparativas (Tabla Comparativa Cara a Cara y
+   Comparación de Planes) en mobile.
+   La regla genérica de "table -> block" quedaba fea porque el
+   HTML de estas 2 tablas no tiene bien seteado data-label en
+   cada <td>. Para estas dos en particular, mantenemos la tabla
+   real y la hacemos deslizable en horizontal (swipe), que es
+   más prolijo y no depende del HTML.
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* Aseguramos scroll horizontal en el contenedor */
+    .tabla-cara-container,
+    .comparison-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Deshacemos el display:block genérico solo para estas tablas */
+    .tabla-cara-container table,
+    .comparison-container table {
+        display: table;
+        width: auto;
+        min-width: 100%;
+    }
+
+    .tabla-cara-container thead,
+    .comparison-container thead {
+        display: table-header-group;
+    }
+
+    .tabla-cara-container tbody,
+    .comparison-container tbody {
+        display: table-row-group;
+    }
+
+    .tabla-cara-container tr,
+    .comparison-container tr {
+        display: table-row;
+    }
+
+    .tabla-cara-container th,
+    .tabla-cara-container td,
+    .comparison-container th,
+    .comparison-container td {
+        display: table-cell;
+        white-space: nowrap;
+        padding: 10px 14px;
+        font-size: 0.82rem;
+    }
+
+    /* Quitamos las etiquetas "Característica:" que agregaba la regla genérica */
+    .tabla-cara-container td::before,
+    .comparison-container td::before {
+        content: none;
+    }
+
+    /* La primera columna (nombre de la característica) un poco más ancha y fija visualmente */
+    .tabla-cara-container th:first-child,
+    .tabla-cara-container td:first-child,
+    .comparison-container th:first-child,
+    .comparison-container td:first-child {
+        min-width: 150px;
+        font-weight: 700;
+        white-space: normal;
+    }
+}
