@@ -37,6 +37,7 @@
                 <li><a href="#proyectos" class="nav-item">Proyectos</a></li>
                 <li><a href="#planes" class="nav-item">Planes</a></li>
                 <li><a href="#plataformas" class="nav-item">Tienda nube vs Tienda negocio</a></li>
+                <li><a href="#tdm-calc" class="nav-item">Calculadora de Costos</a></li>
                 <li><a href="#nosotros" class="nav-item">Nosotros</a></li>
                 
             </ul>
@@ -182,7 +183,7 @@
                 <div class="proyecto-card">
                     <a href="https://legadomatero2.mitiendanube.com/" target="_blank" class="proyecto-img-link">
                         <div class="proyecto-img">
-                            <span class="badge-plataforma tiendanegocio">Tiendanube</span>
+                            <span class="badge-plataforma tiendanube">Tiendanube</span>
                             <img src="assets/legado.png" alt="Proyecto 3">
                         </div>
                     </a>
@@ -324,7 +325,7 @@
 
             <!-- TABLA COMPARATIVA DETALLADA (Solo para los planes desde 0) -->
             <div class="comparison-container">
-                <h3 class="comparison-title">Comparativa detallada de características (Tiendas desde 0)</h3>
+                <h3 class="comparison-title">Comparativa detallada de características</h3>
                 <div class="table-responsive">
                     <table class="comparison-table">
                         <thead>
@@ -489,6 +490,79 @@
         </div>
     </section>
 <div class="section-divider"></div>
+
+<!-- ==========================================
+     SIMULADOR DE MÁRGENES TDM WEB
+     ========================================== -->
+<section id="tdm-calc" class="tdm-calc-section">
+    <div class="tdm-calc-container">
+        <h2 class="tdm-calc-title">Simulador de costos TDM</h2>
+        <p class="tdm-calc-subtitle">Simulá tus ventas y calculá tu ganancia limpia en Tiendanube</p>
+
+        <!-- Selector de Modo -->
+        <div class="tdm-calc-toggle">
+            <button class="tdm-toggle-btn active" id="btn-recibir">Quiero recibir</button>
+            <button class="tdm-toggle-btn" id="btn-cobrar">Voy a cobrar</button>
+        </div>
+
+        <!-- Formulario -->
+        <div class="tdm-calc-form">
+            <div class="tdm-input-group">
+                <label>Mi Plan Tiendanube</label>
+                <select id="select-plan"></select>
+            </div>
+
+            <div class="tdm-input-group">
+                <label>Pasarela de Pago</label>
+                <select id="select-pasarela"></select>
+            </div>
+
+            <div class="tdm-input-group">
+                <label>Medio de Pago</label>
+                <select id="select-medio"></select>
+            </div>
+
+            <div class="tdm-input-group">
+                <label>Plazo de Acreditación</label>
+                <select id="select-plazo"></select>
+            </div>
+
+            <div class="tdm-input-group tdm-main-input">
+                <label id="label-monto">¿Cuánto querés recibir limpio? ($)</label>
+                <input type="number" id="input-monto" placeholder="Ej: 5000" min="0">
+            </div>
+        </div>
+
+        <!-- Resultados -->
+        <div class="tdm-calc-results">
+            <div class="tdm-result-box box-green">
+                <span id="label-box-1" class="tdm-result-label">PARA RECIBIR</span>
+                <strong id="monto-box-1" class="tdm-result-value">$ 0,00</strong>
+            </div>
+            <div class="tdm-result-box box-blue">
+                <span id="label-box-2" class="tdm-result-label">DEBERÍAS COBRAR</span>
+                <strong id="monto-box-2" class="tdm-result-value">$ 0,00</strong>
+            </div>
+        </div>
+
+        <!-- Advertencia -->
+        <div class="tdm-calc-warning">
+            <p>⚠️ <strong>Atención:</strong> Este simulador no incluye costos de "Cuotas sin Interés". Esos cargos financieros deben sumarse por separado.</p>
+        </div>
+
+        <!-- Desglose -->
+        <div class="tdm-calc-breakdown">
+            <div class="tdm-breakdown-row">
+                <span>Comisión Tiendanube</span>
+                <span id="res-comision-tn" class="text-blue">$ 0,00</span>
+            </div>
+            <div class="tdm-breakdown-row">
+                <span>Pasarela + IVA (21%)</span>
+                <span id="res-comision-pasarela" class="text-blue">$ 0,00</span>
+            </div>
+        </div>
+    </div>
+</section>
    <!-- ==========================================
      SECCIÓN SOBRE NOSOTROS
      ========================================== -->
@@ -611,7 +685,7 @@
                     Te orientamos sobre qué plataforma te conviene más según tu presupuesto, volumen de ventas y tipo de producto. Resolvemos todas tus preguntas antes de que tomes una decisión.
                 </p>
                 <a href="https://wa.me/5493442531606?text=Hola!%20Quiero%20crear%20mi%20tienda%20y%20tengo%20algunas%20dudas" target="_blank" class="btn-cta btn-primary">
-                    Hablar con un Asesor
+                    Hablá con nosotros
                 </a>
             </div>
 
