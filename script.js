@@ -85,3 +85,22 @@ if (statsSection) {
     }
 
 });
+
+// Funcionalidad de desplazamiento para el carrusel de proyectos
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    if (track && prevBtn && nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            const cardWidth = track.querySelector('.proyecto-card').offsetWidth + 25;
+            track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            const cardWidth = track.querySelector('.proyecto-card').offsetWidth + 25;
+            track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+    }
+});
