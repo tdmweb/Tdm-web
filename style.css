@@ -1914,9 +1914,9 @@ a.contact-item:hover .contact-val {
 }
 
 .box-green {
-    /* Verde Esmeralda brillante */
-    background-color: #10b981;
-    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    /* Degradado Verde Esmeralda / Menta con volumen */
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
 }
 
 .box-blue {
