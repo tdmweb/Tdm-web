@@ -1792,7 +1792,7 @@ a.contact-item:hover .contact-val {
    ========================================== */
 .tdm-calc-section {
     padding: 4rem 1rem;
-    background-color: #0b0f19; /* Fondo oscuro moderno para destacar la calculadora */
+    background-color: #0b0f19; /* Fondo oscuro moderno */
     display: flex;
     justify-content: center;
 }
@@ -1800,13 +1800,14 @@ a.contact-item:hover .contact-val {
 .tdm-calc-container {
     background: #ffffff;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    /* Sombra azul resplandeciente alrededor de toda la tarjeta */
+    box-shadow: 0 20px 45px rgba(0, 85, 255, 0.28), 0 0 25px rgba(0, 85, 255, 0.15);
     width: 100%;
     max-width: 450px;
     padding: 2.2rem;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     box-sizing: border-box;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 85, 255, 0.15);
 }
 
 .tdm-calc-title {
@@ -1848,9 +1849,10 @@ a.contact-item:hover .contact-val {
 }
 
 .tdm-toggle-btn.active {
-    background: #0055ff;
+    /* Degradado Púrpura / Violeta */
+    background: linear-gradient(135deg, #7c3aed 0%, #c026d3 100%);
     color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 85, 255, 0.25);
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
 }
 
 /* Formulario */
@@ -1883,9 +1885,9 @@ a.contact-item:hover .contact-val {
 
 .tdm-input-group select:focus, 
 .tdm-input-group input:focus {
-    border-color: #0055ff;
+    border-color: #7c3aed;
     background-color: #ffffff;
-    box-shadow: 0 0 0 4px rgba(0, 85, 255, 0.1);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
 }
 
 .tdm-main-input {
@@ -1912,13 +1914,15 @@ a.contact-item:hover .contact-val {
 }
 
 .box-green {
+    /* Verde Esmeralda brillante */
     background-color: #10b981;
-    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
 }
 
 .box-blue {
-    background-color: #0055ff;
-    box-shadow: 0 4px 14px rgba(0, 85, 255, 0.25);
+    /* Degradado Púrpura / Violeta */
+    background: linear-gradient(135deg, #7c3aed 0%, #c026d3 100%);
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
 }
 
 .tdm-result-label {
@@ -1949,7 +1953,7 @@ a.contact-item:hover .contact-val {
 }
 
 .text-blue {
-    color: #0055ff;
+    color: #7c3aed;
     font-weight: 700;
 }
 /* ============================================================
