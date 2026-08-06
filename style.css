@@ -1788,38 +1788,39 @@ a.contact-item:hover .contact-val {
 }
 
 /* ==========================================
-   TDM CALC STYLES
+   TDM CALC STYLES (Completo y Personalizado)
    ========================================== */
 .tdm-calc-section {
     padding: 4rem 1rem;
-    background-color: #f8fafc;
+    background-color: #0b0f19; /* Fondo oscuro moderno para destacar la calculadora */
     display: flex;
     justify-content: center;
 }
 
 .tdm-calc-container {
     background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 450px;
-    padding: 2rem;
+    padding: 2.2rem;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tdm-calc-title {
-    color: #0f172a !important; /* Azul muy oscuro / casi negro para que resalte perfecto */
+    color: #0f172a !important;
     text-align: center;
     font-size: 1.6rem;
     font-weight: 800;
     margin-bottom: 0.3rem;
-    display: block; /* Asegura que no quede oculto */
+    display: block;
 }
 
 .tdm-calc-subtitle {
     text-align: center;
-    color: #475569;
+    color: #64748b;
     margin: 0 0 1.8rem 0;
     font-size: 0.9rem;
 }
@@ -1828,8 +1829,8 @@ a.contact-item:hover .contact-val {
 .tdm-calc-toggle {
     display: flex;
     background: #f1f5f9;
-    border-radius: 10px;
-    padding: 4px;
+    border-radius: 12px;
+    padding: 5px;
     margin-bottom: 1.5rem;
 }
 
@@ -1843,13 +1844,13 @@ a.contact-item:hover .contact-val {
     font-size: 0.9rem;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
 }
 
 .tdm-toggle-btn.active {
-    background: #ffffff;
-    color: #0055ff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    background: #0055ff;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 85, 255, 0.25);
 }
 
 /* Formulario */
@@ -1861,7 +1862,7 @@ a.contact-item:hover .contact-val {
 
 .tdm-input-group label {
     font-size: 0.85rem;
-    color: #334155;
+    color: #1e293b;
     font-weight: 600;
     margin-bottom: 0.4rem;
 }
@@ -1869,13 +1870,13 @@ a.contact-item:hover .contact-val {
 .tdm-input-group select, 
 .tdm-input-group input {
     padding: 0.75rem 0.9rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
     font-size: 0.95rem;
     color: #0f172a;
     outline: none;
-    background-color: #fff;
-    transition: border-color 0.2s;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
     width: 100%;
     box-sizing: border-box;
 }
@@ -1883,6 +1884,8 @@ a.contact-item:hover .contact-val {
 .tdm-input-group select:focus, 
 .tdm-input-group input:focus {
     border-color: #0055ff;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 85, 255, 0.1);
 }
 
 .tdm-main-input {
@@ -1893,13 +1896,13 @@ a.contact-item:hover .contact-val {
 .tdm-calc-results {
     display: flex;
     gap: 0.8rem;
-    margin: 1.5rem 0;
+    margin: 1.5rem 0 1.2rem 0;
 }
 
 .tdm-result-box {
     flex: 1;
-    padding: 1rem 0.5rem;
-    border-radius: 10px;
+    padding: 1.1rem 0.5rem;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1910,10 +1913,12 @@ a.contact-item:hover .contact-val {
 
 .box-green {
     background-color: #10b981;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
 }
 
 .box-blue {
     background-color: #0055ff;
+    box-shadow: 0 4px 14px rgba(0, 85, 255, 0.25);
 }
 
 .tdm-result-label {
@@ -1924,30 +1929,15 @@ a.contact-item:hover .contact-val {
 }
 
 .tdm-result-value {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 800;
+    font-family: monospace;
 }
 
-/* Warning Box */
-.tdm-calc-warning {
-    background-color: #fffbeb;
-    border: 1px solid #fde68a;
-    padding: 0.9rem;
-    border-radius: 8px;
-    margin-bottom: 1.2rem;
-}
-
-.tdm-calc-warning p {
-    font-size: 0.8rem;
-    color: #92400e;
-    margin: 0;
-    line-height: 1.4;
-}
-
-/* Breakdown */
+/* Breakdown (Desglose) */
 .tdm-calc-breakdown {
     border-top: 1px dashed #cbd5e1;
-    padding-top: 1rem;
+    padding-top: 1.2rem;
 }
 
 .tdm-breakdown-row {
@@ -1955,7 +1945,7 @@ a.contact-item:hover .contact-val {
     justify-content: space-between;
     font-size: 0.85rem;
     color: #475569;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
 }
 
 .text-blue {
